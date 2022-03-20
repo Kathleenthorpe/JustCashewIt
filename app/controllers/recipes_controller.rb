@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to dashboard_path
     else
-    render :new
+      render :new
     end
   end
 
@@ -31,20 +31,20 @@ class RecipesController < ApplicationController
     if @recipe.update
       redirect_to dashboard_path
     else
-    render :edit
+      render :edit
     end
   end
 
 
-    def destroy
-      @recipe = Recipe.find(params[:id])
-      @recipe.destroy
-      redirect_to dashboard_path
-    end
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to dashboard_path
+  end
 
     private
 
-    def recipe_params
-      params.require(:recipe).permit(:name, :description, :rating, :prep_time)
-    end
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :rating, :prep_time)
+  end
 end
