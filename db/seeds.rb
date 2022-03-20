@@ -40,8 +40,8 @@ puts "#{User.count} user was created"
   )
 
   file1 = URI.open(photos.sample)
-  file2 = URI.option(photos.sample)
-  recipe.photo.attach([{ io: file1, filename: recipe.name, content_type: 'image/png' },
+  file2 = URI.open(photos.sample)
+  recipe.photos.attach([{ io: file1, filename: recipe.name, content_type: 'image/png' },
     { io: file2, filename: recipe.name, content_type: 'image/jpeg' }])
 end
 
